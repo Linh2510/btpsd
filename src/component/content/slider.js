@@ -1,21 +1,10 @@
-import React, { Component } from 'react'
+import React, { useState }  from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-export default class slider extends Component {
-    constructor(props) {
-        super(props);
-        this.next = this.next.bind(this);
-        this.previous = this.previous.bind(this);
-      }
-      next() {
-        this.slider.slickNext();
-      }
-      previous() {
-        this.slider.slickPrev();
-      }
-    render() {
+function Sliderr() {
+  const [slider, setSlider] = useState(null)
         const settings = {
             arrows:false,
             dots: false,
@@ -25,11 +14,13 @@ export default class slider extends Component {
             slidesToScroll: 1,
             // autoplay:true
           };
+       
+          const next = () => slider.slickNext();
           return (
             <div className="special">
             <div className="container">
                 {/* <div className="row "> */}
-                <Slider ref={c => (this.slider = c)} {...settings}>
+                <Slider ref={c => setSlider(c)} {...settings}>
                     <div className="text" >
                         <h1>Vertification Badge</h1>
                         <p> Firt-time speccialists have the option of registering under limited free trial membership. When searching for
@@ -54,10 +45,9 @@ export default class slider extends Component {
                     
                 </Slider>
                 </div>
-                 <button className="btn btn__next" onClick={this.next}> <img src="../images/arrow.png" />  </button>
+                 <button className="btn btn__next" onClick={next}> <img src="../images/arrow.png" />  </button>
             {/* </div> */}
            </div>
-          );
-        
-          }
+          );   
 }
+export default  Sliderr;

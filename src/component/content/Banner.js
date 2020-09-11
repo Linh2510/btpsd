@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
 
-export default class Banner extends Component {
-    render() {
-        return (
-            <div className="banner">
+import React, { useState, useEffect } from 'react';
+
+function Banner() {
+  
+  return (
+    <div className="banner">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12 col-md-6 col-lg-6 context">
@@ -17,6 +18,5 @@ export default class Banner extends Component {
                     </div>
                 </div>
             </div>
-        )
-    }
+  );
 }

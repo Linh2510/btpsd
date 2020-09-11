@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React  from 'react'
 import { PopupboxManager, PopupboxContainer } from 'react-popupbox';
 import "react-popupbox/dist/react-popupbox.css"
-export default class Register extends Component {
-      openPopupbox() {
+function Register() {
+      const openPopupbox = () => {
         const content = (
             <form>
             <div className="form-group">
@@ -35,14 +35,14 @@ export default class Register extends Component {
           }
         })
       }
-  
-      render() {
         return (
           <div class="btn_register">
-               <a className="register" onClick={this.openPopupbox}>Register a Free Account</a>
-                <PopupboxContainer />
+               <a className="register" onClick={openPopupbox}>Register a Free Account</a>
+               <PopupboxContainer />
           </div>
+          
         )
-      }
+      
 }
+export default Register;
 

@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import Slider from './slider'
-import Register from './Register'
-export default class content extends Component {
-    render() {
+import React, { useState }  from 'react';
+import Slider from './slider';
+import Register from './Register';
+
+function Contentindex() {
+    
         return (
-            <React.Fragment>
-                
+            <div >
+              
                  <div className = "block-2">
                     <div className= "container-fluid">
                         <div className="row">
@@ -114,7 +115,7 @@ export default class content extends Component {
                     </div>
             </div>
 		
-        </React.Fragment>
-        )
-    }
+            </div>
+        );
 }
+export default Contentindex;
